@@ -2,7 +2,7 @@
 
 ## Introduction
 This repository contains code and data for predicting customer behavior in an online store. The primary objective of this project is to predict whether a given customer will make a purchase (1) or not (0) in the store. We explore two different classification models: Random Forest and XGBoost.
-
+ 
 ## Objectives
 Exploratory Data Analysis (EDA): We investigate the data to gain insights into its characteristics and distributions.
 
