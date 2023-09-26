@@ -53,7 +53,7 @@ Recall: 96% for Class 0, 58% for Class 1
 F1-score: 94% for Class 0, 64% for Class 1
 
 ## Conclusion
-This project demonstrates how to predict customer behavior in an online store using machine learning techniques. Both Random Forest and XGBoost models show promising results in identifying potential customers who are likely to make purchases. You can use this code as a starting point for your own customer behavior prediction tasks.
+In this customer behavior prediction project, we evaluated two machine learning models: Random Forest and XGBoost. These models were employed to predict whether a customer would make a purchase (Class 1) or not (Class 0) in an online store. The results provide valuable insights into the effectiveness of the models and the challenges posed by imbalanced data.
 
 ## Credits
 This project was implemented by Aleksandar Dimitrov and is licensed under the MIT License. If you have any questions or comments, please feel free to contact me at alexi.zein@gmail.com.
