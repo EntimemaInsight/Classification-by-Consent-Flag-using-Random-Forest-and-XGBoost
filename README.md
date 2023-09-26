@@ -57,11 +57,10 @@ True Negatives (TN): 96% of actual non-purchases were correctly predicted as non
 False Positives (FP): 7% of non-purchases were incorrectly predicted as purchases.
 False Negatives (FN): 42% of actual purchases were incorrectly predicted as non-purchases.
 
-2. Classification Report
+2. Classification Report:
 The XGBoost model demonstrated slightly better overall performance with an accuracy of 90%. Similar to the Random Forest model, it excels in precision for Class 0 (93%) but struggles with precision for Class 1 (71%). The recall for Class 0 remains high at 96%, while the recall for Class 1 is still relatively low at 58%.
 
 3. Cross-Validation Results:
-
 With cross-validation applied to the XGBoost model, we observe a consistent performance across multiple folds. The accuracy remains at 90%, and precision, recall, and F1-score are consistent with the non-cross-validated results. This indicates that the model's performance is stable and not heavily influenced by the specific training-validation split, enhancing our confidence in its effectiveness.
 
 
