@@ -1,4 +1,4 @@
-# Classification-by-Consent-Flag-using-Random-Forest-and-XGBoost
+# Classification-by-Consent-Flag-using-Random-Forest-and-XGBoost with and without DATA AUGUMENTATION TECHNIQUES
 
 ## Introduction
 This repository contains code and data for predicting customer behavior in an online store. The primary objective of this project is to predict whether a given customer will make a purchase (1) or not (0) in the store. We explore two different classification models: Random Forest and XGBoost.
