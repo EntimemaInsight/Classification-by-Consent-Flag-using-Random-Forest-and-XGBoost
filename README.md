@@ -45,7 +45,7 @@ Two classification models, Random Forest and XGBoost, are trained and evaluated 
 ## Model Performance
 
 ### XGBoost Model
-The XGBoost Classifier with Random Oversampling demonstrated the best overall performance with an accuracy of 95%, precision for Class 0 (99%), Precision for Class 1 (0.92%), 
+The XGBoost Classifier(using cross-validation) with Random Oversampling demonstrated the best overall performance with an accuracy of 95%, precision for Class 0 (99%), Precision for Class 1 (0.92%), 
 Recall for Class 0(91%), Recall for Class 1 (99%), F1-score for Class 0 (95%), F1-score for Class 1 (96%). 
 The use of stratify parameter during the random oversampling ensured that the class distribution in the target variable was maintained, preventing bias in the oversampled dataset and contributing to the model's excellent performance.
 
