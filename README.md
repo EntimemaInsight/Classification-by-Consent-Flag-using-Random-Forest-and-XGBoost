@@ -6,13 +6,21 @@ This repository contains code and data for predicting customer behavior in an on
 ## Objectives
 Exploratory Data Analysis (EDA): We investigate the data to gain insights into its characteristics and distributions.
 
-1. Data Preparation: This step focuses on data preprocessing, ensuring that it is clean and suitable for modeling. Tasks include handling missing values, one-hot encoding categorical features, and label encoding binary features.
+1. Imported Necessary Libraries: We've imported libraries like pandas, numpy, sklearn, imbalanced-learn (for data augmentation), RandomForestClassifier, xgboost, and others.
 
-2. Model Training: We train two classification models, Random Forest, and XGBoost.
+2. Exploratory Data Analysis (EDA): We've loaded the dataset, displayed its head, described statistical information, and checked for missing values.
+   
+3. Data Preparation: This step focuses on data preprocessing, ensuring that it is clean and suitable for modeling. Tasks include handling missing values, one-hot encoding categorical features, and label encoding binary features.
 
-3. Model Evaluation: To assess model performance, we use evaluation metrics such as precision, recall, and F1-score. We also address class imbalance issues to ensure fair evaluation.
+4. Balancing the Dataset: We've applied different data augmentation techniques like Random Oversampling, Borderline SMOTE, ADASYN, and SMOTE to address class imbalance.
 
-4. Model Selection: After evaluating both Random Forest and XGBoost models, we make an informed decision to select the most appropriate model for predicting customer purchases in the online store.
+5. Model Training: We train two classification models, Random Forest, and XGBoost. Random Forest and XGBoost models were trained whithout using and using the augmented datasets.
+
+6. Cross-Validation: Cross-validation was performed for the XGBoost model using ADASYN, Borderline Smote, SMOTE, and Random Oversampling and its performance was assessed.
+
+7. Model Evaluation: To assess model performance, we use evaluation metrics such as precision, recall, and F1-score. We also address class imbalance issues to ensure fair evaluation.
+
+5. Model Selection: After evaluating both Random Forest and XGBoost models, we make an informed decision to select the most appropriate model for predicting customer purchases in the online store.
 
 ## Getting Started
 Prerequisites
@@ -36,35 +44,13 @@ Two classification models, Random Forest and XGBoost, are trained and evaluated 
 
 ## Model Performance
 
-### Random Forest Model
-
-1. Confusion Matrix:
-True Positives (TP): 53% of actual purchases were correctly predicted as purchases.
-True Negatives (TN): 96% of actual non-purchases were correctly predicted as non-purchases.
-False Positives (FP): 9% of non-purchases were incorrectly predicted as purchases.
-False Negatives (FN): 47% of actual purchases were incorrectly predicted as non-purchases.
-
-2. Classification Report:
-The Random Forest model achieved an accuracy of 89%, which indicates that it correctly classified 89% of the instances in the test dataset. The precision for Class 0 is impressive at 91%, meaning that when the model predicts a customer won't make a purchase (Class 0), it is accurate 91% of the time. However, the precision for Class 1 is lower at 75%, suggesting that when the model predicts a purchase (Class 1), it is accurate only 75% of the time. This discrepancy highlights the model's tendency to overpredict non-purchases. The recall for Class 0 is excellent at 96%, indicating that the model identifies 96% of actual non-purchases. In contrast, the recall for Class 1 is lower at 53%, revealing a notable weakness in detecting actual purchases. This imbalance in precision and recall between the two classes reflects the challenge of imbalanced data, where the model is inclined to classify most instances as non-purchases due to the predominance of Class 0 in the dataset.
-
 ### XGBoost Model
-The XGBoost model demonstrated slightly better overall performance with an accuracy of 90%. Similar to the Random Forest model, it excels in precision for Class 0 (93%) but struggles with precision for Class 1 (71%). The recall for Class 0 remains high at 96%, while the recall for Class 1 is still relatively low at 58%.
-
-1. Confusion Matrix:
-True Positives (TP): 58% of actual purchases were correctly predicted as purchases.
-True Negatives (TN): 96% of actual non-purchases were correctly predicted as non-purchases.
-False Positives (FP): 7% of non-purchases were incorrectly predicted as purchases.
-False Negatives (FN): 42% of actual purchases were incorrectly predicted as non-purchases.
-
-2. Classification Report:
-The XGBoost model demonstrated slightly better overall performance with an accuracy of 90%. Similar to the Random Forest model, it excels in precision for Class 0 (93%) but struggles with precision for Class 1 (71%). The recall for Class 0 remains high at 96%, while the recall for Class 1 is still relatively low at 58%.
-
-3. Cross-Validation Results:
-With cross-validation applied to the XGBoost model, we observe a consistent performance across multiple folds. The accuracy remains at 90%, and precision, recall, and F1-score are consistent with the non-cross-validated results. This indicates that the model's performance is stable and not heavily influenced by the specific training-validation split, enhancing our confidence in its effectiveness. XGBoost with cross-validation has the highest accuracy among all models, which means that this model better predicts when customers do not make a purchase.
-
+The XGBoost Classifier with Random Oversampling demonstrated the best overall performance with an accuracy of 95%, precision for Class 0 (99%), Precision for Class 1 (0.92%), 
+Recall for Class 0(91%), Recall for Class 1 (99%), F1-score for Class 0 (95%), F1-score for Class 1 (96%). 
+The use of stratify parameter during the random oversampling ensured that the class distribution in the target variable was maintained, preventing bias in the oversampled dataset and contributing to the model's excellent performance.
 
 ## Conclusion 
-In conclusion, while both Random Forest and XGBoost models show promise in predicting customer behavior, addressing the imbalance in the dataset and fine-tuning model parameters are essential steps for enhancing the accuracy of predictions, particularly for Class 1 (customer purchases). The inclusion of confusion matrices provides a more granular view of the models' performance, and the use of cross-validation for XGBoost strengthens the reliability of our evaluation. 
+In conclusion, this project successfully addressed the challenge of predicting customer behavior. By exploring Random Forest and XGBoost models, applying data augmentation techniques, and conducting cross validation, we have developed effective predictive models. These models can assist in targeting potential customers more effectively and improving conversion rates. 
 
 ## Credits
 This project was implemented by Aleksandar Dimitrov and is licensed under the MIT License. If you have any questions or comments, please feel free to contact me at alexi.zein@gmail.com.
